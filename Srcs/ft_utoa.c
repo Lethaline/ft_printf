@@ -6,7 +6,7 @@
 /*   By: lolemmen <lolemmen@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:28:57 by lolemmen          #+#    #+#             */
-/*   Updated: 2022/04/30 11:49:10 by lolemmen         ###   ########.fr       */
+/*   Updated: 2022/05/02 13:59:33 by lolemmen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,15 @@ static int	ft_size_uint(unsigned int n)
 	}
 	return (size);
 }
-static unsigned int ft_convert(unsigned int n)
+
+static unsigned int	ft_convert(unsigned int n)
 {
 	if (n < 0)
 		return (-n);
 	return (n);
 }
 
-static int ft_sign(unsigned int n)
+static int	ft_sign(unsigned int n)
 {
 	if (n < 0)
 		return (1);
@@ -48,7 +49,7 @@ char	*ft_utoa(unsigned int n)
 	char	*str;
 	long	nb;
 	int		size;
-	int		minus; 
+	int		minus;
 
 	nb = ft_convert(n);
 	size = ft_size_uint(n);

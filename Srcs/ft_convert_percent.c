@@ -6,7 +6,7 @@
 /*   By: lolemmen <lolemmen@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 16:30:08 by lolemmen          #+#    #+#             */
-/*   Updated: 2022/04/27 16:36:29 by lolemmen         ###   ########.fr       */
+/*   Updated: 2022/05/02 13:56:32 by lolemmen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 int	ft_convert_percent(t_args flags)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (flags.minus == 1)
 	{
 		count += ft_putchar('%');
-		count += ft_define_width(flags.width, 1, 0);
+		count += ft_define_width(flags.width, 1, flags.zero);
 	}
-	else
+	if (flags.minus == 0)
 	{
-		count += ft_define_width(flags.width, 1, 0);
+		count += ft_define_width(flags.width, 1, flags.zero);
 		count += ft_putchar('%');
 	}
 	return (count);

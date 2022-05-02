@@ -6,7 +6,7 @@
 /*   By: lolemmen <lolemmen@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 14:45:19 by lolemmen          #+#    #+#             */
-/*   Updated: 2022/05/01 15:55:05 by lolemmen         ###   ########.fr       */
+/*   Updated: 2022/05/02 13:54:10 by lolemmen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ char	*ft_convert_base(unsigned int n, char *base)
 	str[size] = '\0';
 	while (size--)
 	{
-		
 		str[size] = base[n % base_size];
 		n /= base_size;
 	}

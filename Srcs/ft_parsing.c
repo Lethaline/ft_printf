@@ -6,7 +6,7 @@
 /*   By: lolemmen <lolemmen@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 15:06:44 by lolemmen          #+#    #+#             */
-/*   Updated: 2022/04/30 09:44:33 by lolemmen         ###   ########.fr       */
+/*   Updated: 2022/05/02 13:58:41 by lolemmen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ int	ft_parsing(char *format, va_list ap)
 		{
 			i = ft_parse_flags(format, i, &flags, ap);
 			if (ft_is_conversion(format[i]))
-			{
 				len += ft_check_conversion(format[i], flags, ap);
-			}
 			else if (format[i])
 				len += ft_putchar(format[i]);
 		}

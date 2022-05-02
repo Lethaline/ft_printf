@@ -20,11 +20,11 @@ int	ft_convert_char(int c, t_args flags)
 	if (flags.minus == 1)
 	{
 		count += ft_putchar(c);
-		count += ft_define_width(flags.width, 1, 0);
+		count += ft_define_width(flags.width, 1, flags.zero);
 	}
 	else
 	{
-		count += ft_define_width(flags.width, 1, 0);
+		count += ft_define_width(flags.width, 1, flags.zero);
 		count += ft_putchar(c);
 	}
 	return (count);

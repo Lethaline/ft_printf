@@ -6,7 +6,7 @@
 #    By: lolemmen <lolemmen@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 14:36:42 by lolemmen          #+#    #+#              #
-#    Updated: 2022/05/01 17:10:26 by lolemmen         ###   ########.fr        #
+#    Updated: 2022/05/02 19:01:04 by lolemmen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,7 +102,7 @@ SRCS = $(addprefix $(SRCDIR)/, $(SRC))
 SRCSBON = $(SRCBON)
 OBJS = $(addprefix $(OBJSDIR)/, $(addsuffix .o, $(basename $(SRC))))
 OBJS_DIR = $(sort $(dir $(OBJS)))
-OBJSBON = $(addsuffix .o, $(basename $(SRCBON)))
+OBJSBON = $(addprefix $(OBJSDIR)/, $(addsuffix .o, $(basename $(SRCBON))))
 
 INCS = $(addprefix -I, $(INC))
 
@@ -118,6 +118,7 @@ build :
 clean :
 	$(RM) $(OBJS)
 	$(RM) $(OBJSBON)
+	$(RM) $(OBJS_DIR)
 
 fclean : clean
 	$(RM) $(NAME)
@@ -127,6 +128,7 @@ re : fclean all
 $(OBJSDIR)/%.o : $(SRCSDIR)/%.c
 	$(CC) -c -o $@ $< $(FLAGS)
 
-bonus :
+bonus : build $(OBJSBON)
+	ar rcs $(NAME) $(OBJSBON)
 	
 

@@ -6,7 +6,7 @@
 /*   By: lolemmen <lolemmen@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 11:06:36 by lolemmen          #+#    #+#             */
-/*   Updated: 2022/05/01 15:47:18 by lolemmen         ###   ########.fr       */
+/*   Updated: 2022/05/02 13:55:35 by lolemmen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_treat_hexa_uint_part(char *str, t_args flags, int maj)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (flags.hashtag == 1 && maj == 1)
@@ -24,7 +24,7 @@ static int	ft_treat_hexa_uint_part(char *str, t_args flags, int maj)
 	if (flags.dot >= 0)
 		count += ft_define_width(flags.dot, ft_strlen(str), 1);
 	count += ft_putstrbylen(str, ft_strlen(str));
-	return count;
+	return (count);
 }
 
 static int	ft_puthexa_uint(char *str, t_args flags, int maj)
@@ -36,7 +36,8 @@ static int	ft_puthexa_uint(char *str, t_args flags, int maj)
 		flags.width -= 2;
 	if (flags.minus == 1)
 		count += ft_treat_hexa_uint_part(str, flags, maj);
-	if (flags.dot >= 0 && flags.dot < (int)ft_strlen(str))
+	if ((flags.dot >= 0 || (flags.dot == -2 && flags.star == 0))
+		&& flags.dot < (int)ft_strlen(str))
 		flags.dot = (int)ft_strlen(str);
 	if (flags.dot >= 0)
 		count += ft_define_width(flags.width, flags.dot, 0);
@@ -49,11 +50,11 @@ static int	ft_puthexa_uint(char *str, t_args flags, int maj)
 
 int	ft_convert_hexadecimal(unsigned int n, t_args flags, int maj)
 {
-	int	count;
+	int		count;
 	char	*str;
 
 	count = 0;
-	if (flags.dot == 0 && n == 0)
+	if ((flags.dot == 0 || flags.dot == -2) && n == 0)
 	{
 		count += ft_define_width(flags.width, 0, 0);
 		return (count);

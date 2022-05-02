@@ -6,7 +6,7 @@
 /*   By: lolemmen <lolemmen@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 15:51:06 by lolemmen          #+#    #+#             */
-/*   Updated: 2022/05/01 15:55:03 by lolemmen         ###   ########.fr       */
+/*   Updated: 2022/05/02 13:54:49 by lolemmen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	ft_size_nb(unsigned long n, unsigned long base)
 {
 	if (n < base)
 		return (1);
-		return (1 + ft_size_nb(n / base, base));
+	return (1 + ft_size_nb(n / base, base));
 }
 
 char	*ft_convert_base_ul(unsigned long n, char *base)
