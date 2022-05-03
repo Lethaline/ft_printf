@@ -34,15 +34,3 @@ int	ft_is_conversion(char c)
 		return (1);
 	return (0);
 }
-
-void	check_format(t_args *flags)
-{
-	printf("- : %d\n", flags->minus);
-	printf("+ : %d\n", flags->plus);
-	printf("0 : %d\n", flags->zero);
-	printf(". : %d\n", flags->dot);
-	printf("# : %d\n", flags->hashtag);
-	printf("  : %d\n", flags->space);
-	printf("w : %d\n", flags->width);
-	printf("* : %d\n", flags->star);
-}
