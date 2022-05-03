@@ -13,11 +13,9 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
-# include <limits.h>
 
 typedef struct s_args
 {
@@ -54,7 +52,6 @@ t_args	ft_flag_plus(t_args flags);
 t_args	ft_flag_minus(t_args flags);
 t_args	ft_flag_width(va_list ap, t_args flags);
 t_args	ft_flag_isdigit(char c, t_args flags);
-void	check_format(t_args *flags);
 char	*ft_strdup(const char *s1);
 char	*ft_itoa(long n);
 char	*ft_utoa(unsigned int n);
