@@ -121,6 +121,6 @@ int	main(void)
 	printf("%d\n", printf("{%--187p}\n" ,(void*)5092148362367175078lu));
 	printf("%d\n", ft_printf("{%015p}\n", NULL));
 	printf("%d\n", printf("{%015p}\n", NULL));
-	printf("%d\n", ft_printf("{%-15p}\n", NULL));
-	printf("%d\n", printf("{%-15p}\n", NULL));
+	printf("%d\n", ft_printf("{%-15.5d}\n", NULL));
+	printf("%d\n", printf("{%-15.5d}\n", NULL));
 }
