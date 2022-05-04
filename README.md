@@ -1,8 +1,8 @@
 FT_PRINTF : 
 
 Final Score : 125% <br />
-Bonus : Done <br />
-Allocations and protections : Correct <br />
+Bonus : OK <br />
+Allocations and protections : OK <br />
 
 The main file need to be launch without flags ! -> "gcc main.c libftprintf.a"
 
