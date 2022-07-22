@@ -6,11 +6,11 @@
 #    By: lolemmen <lolemmen@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 14:36:42 by lolemmen          #+#    #+#              #
-#    Updated: 2022/05/02 19:01:04 by lolemmen         ###   ########.fr        #
+#    Updated: 2022/07/22 18:31:06 by lolemmen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a 
+NAME = libftprintf.a
 
 # Compilation
 
@@ -53,7 +53,7 @@ SRC = \
 	  ft_utoa.c \
 	  ft_convert_base.c \
 	  ft_convert_base_ul.c \
-	  
+
 SRCBON = \
 	  ft_printf.c \
 	  ft_checker.c \
@@ -108,13 +108,9 @@ INCS = $(addprefix -I, $(INC))
 
 all : $(NAME)
 
-$(NAME) : build $(OBJS)
+$(NAME) : $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-build :
-	mkdir -p $(OBJSDIR)
-	mkdir -p $(OBJS_DIR)
-	
 clean :
 	$(RM) $(OBJS)
 	$(RM) $(OBJSBON)
@@ -126,9 +122,10 @@ fclean : clean
 re : fclean all
 
 $(OBJSDIR)/%.o : $(SRCSDIR)/%.c
+	mkdir -p $(OBJSDIR) $(OBJS_DIR)
 	$(CC) -c -o $@ $< $(FLAGS)
 
-bonus : build $(OBJSBON)
+bonus : $(OBJSBON)
 	ar rcs $(NAME) $(OBJSBON)
-	
+
 
